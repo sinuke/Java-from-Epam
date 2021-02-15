@@ -17,6 +17,33 @@ package com.sinapps.task09;
 
 public class Main {
     public static void main(String[] args) {
+        Products products = new Products(15);
+        for (Product product : products.getProducts()) {
+            System.out.println(product);
+        }
 
+        System.out.println("\n------------------------------");
+        System.out.println("     Список товаров: Кофе     ");
+        System.out.println("------------------------------");
+        Product[] productsByName = products.filterByName("Кофе");
+        for (Product product : productsByName) {
+            System.out.println(product);
+        }
+
+        System.out.println("\n--------------------------------------------");
+        System.out.println("Список товаров: Кофе, стоимостью не более $5");
+        System.out.println("--------------------------------------------");
+        Product[] productsByNameAndPrice = products.filterByNameAndPrice("Кофе", 5);
+        for (Product product : productsByNameAndPrice) {
+            System.out.println(product);
+        }
+
+        System.out.println("\n---------------------------------------------");
+        System.out.println("Список товаров со сроком хранения более 2 лет");
+        System.out.println("---------------------------------------------");
+        Product[] productsByBestBefore = products.filterByBestBefore(2);
+        for (Product product : productsByBestBefore) {
+            System.out.println(product);
+        }
     }
 }

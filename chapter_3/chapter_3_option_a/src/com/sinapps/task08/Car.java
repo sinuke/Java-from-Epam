@@ -77,7 +77,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return id + ". " + getBrand() + " " + getModel() + " " + getYear() + " г. в. " + getColor() + " $" +
-                String.format("%.2f", getPrice()) + " [" + getLicensePlate() + "]";
+        return id + ".\t" + getBrand() + "\t" + getModel() + "\t" + getYear() + " г. в.\t" + getColor() + "\t$" +
+                String.format("%.2f", getPrice()) + "\t[" + getLicensePlate() + "]";
     }
 }
