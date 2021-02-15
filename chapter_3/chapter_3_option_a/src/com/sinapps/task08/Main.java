@@ -17,6 +17,33 @@ package com.sinapps.task08;
 
 public class Main {
     public static void main(String[] args) {
+        Cars cars = new Cars(10);
+        for (Car car : cars.getCars()) {
+            System.out.println(car);
+        }
 
+        System.out.println("\n--------------------------------");
+        System.out.println("       Автомобили марки BMW:    ");
+        System.out.println("--------------------------------");
+        Car[] carsBMW = cars.filterByBrand("BMW");
+        for (Car car : carsBMW) {
+            System.out.println(car);
+        }
+
+        System.out.println("\n----------------------------------");
+        System.out.println("Автомобили марки BMW старше 5 лет:");
+        System.out.println("----------------------------------");
+        Car[] carsOldBMW = cars.filterByBrandAndYearsOld("BMW", 5);
+        for (Car car : carsOldBMW) {
+            System.out.println(car);
+        }
+
+        System.out.println("\n--------------------------------------------");
+        System.out.println("Автомобили 2010 г.в. стоимостью более $1000:");
+        System.out.println("--------------------------------------------");
+        Car[] cars2010 = cars.filterByYearAndPrice(2010, 1000);
+        for (Car car : cars2010) {
+            System.out.println(car);
+        }
     }
 }
