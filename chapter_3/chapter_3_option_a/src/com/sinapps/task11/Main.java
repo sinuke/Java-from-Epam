@@ -17,6 +17,33 @@ package com.sinapps.task11;
 
 public class Main {
     public static void main(String[] args) {
+        Buses buses = new Buses(15);
+        for (Bus bus : buses.getBuses()) {
+            System.out.println(bus);
+        }
 
+        System.out.println("\n------------------------------");
+        System.out.println("Список автобусов 10А маршрута:");
+        System.out.println("------------------------------");
+        Bus[] busesRoute = buses.filterByRoute("10А");
+        for (Bus bus : busesRoute) {
+            System.out.println(bus);
+        }
+
+        System.out.println("\n------------------------------------------------");
+        System.out.println("Список автобусов, эксплуатирующихся более 5 лет:");
+        System.out.println("------------------------------------------------");
+        Bus[] busesAge = buses.filterByAge(5);
+        for (Bus bus : busesAge) {
+            System.out.println(bus);
+        }
+
+        System.out.println("\n---------------------------------------------");
+        System.out.println("Список автобусов с пробегом более 100 000 км:");
+        System.out.println("---------------------------------------------");
+        Bus[] busesMileage = buses.filterByMileage(100_000);
+        for (Bus bus : busesMileage) {
+            System.out.println(bus);
+        }
     }
 }
