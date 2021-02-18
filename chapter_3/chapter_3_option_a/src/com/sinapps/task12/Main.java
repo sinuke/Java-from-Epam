@@ -17,6 +17,33 @@ package com.sinapps.task12;
 
 public class Main {
     public static void main(String[] args) {
+        Airlines airlines = new Airlines(15);
+        for (Airline airline : airlines.getAirlines()) {
+            System.out.println(airline);
+        }
 
+        System.out.println("\n-------------------------------");
+        System.out.println("    Список рейсов до Парижа:   ");
+        System.out.println("-------------------------------");
+        Airline[] airlinesToParis = airlines.filterByDestination("Париж");
+        for (Airline airline : airlinesToParis) {
+            System.out.println(airline);
+        }
+
+        System.out.println("\n-------------------------------");
+        System.out.println("Список рейсов, вылетающих в СР:");
+        System.out.println("-------------------------------");
+        Airline[] airlinesWednesday = airlines.filterByDay(WeekDays.WEDNESDAY);
+        for (Airline airline : airlinesWednesday) {
+            System.out.println(airline);
+        }
+
+        System.out.println("\n-------------------------------------------");
+        System.out.println("Список рейсов, вылетающих в СР после 10:00:");
+        System.out.println("-------------------------------------------");
+        Airline[] airlinesWednesday10AM = airlines.filterByDayAndTime(WeekDays.WEDNESDAY, "10:00");
+        for (Airline airline : airlinesWednesday10AM) {
+            System.out.println(airline);
+        }
     }
 }

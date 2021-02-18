@@ -77,7 +77,6 @@ public class Trains {
     }
 
     public Train[] filterByDestinationAndTime(String destination, String time) {
-
         try {
             int count = 0;
             Date needTime = departureFormat.parse(time);
