@@ -6,9 +6,7 @@ public class FractionsChanger {
         Fraction[] result = new Fraction[LENGTH];
         for (int i = 0; i < LENGTH; i++) {
             if (i % 2 == 0 && i < LENGTH - 1) {
-                Fraction fraction = new Fraction(fractions[i].getNumerator() * fractions[i + 1].getDenominator() +
-                        fractions[i + 1].getNumerator() * fractions[i].getDenominator(),
-                        fractions[i].getDenominator() * fractions[i + 1].getDenominator());
+                Fraction fraction = Fraction.sum(fractions[i], fractions[i + 1]);
                 result[i] = fraction;
             } else {
                 result[i] = fractions[i];
